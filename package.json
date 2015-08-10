@@ -1,0 +1,21 @@
+{
+  "name": "dmcdoc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^5.8.21",
+    "css-loader": "^0.15.6",
+    "file-loader": "^0.8.4",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "react-style": "^0.5.5",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6"
+  }
+}
