@@ -34,8 +34,12 @@ let styles = StyleSheet.create({
 		paddingTop: 15,
 		paddingBottom: 10,
 		backgroundColor: 'rgba(245, 245, 245, 0.5)',
-		position:'fixed',
 		border: 'none',
+	},
+	'@media (min-width : 667px)': {
+		toc: {
+			position: 'fixed',
+		}
 	},
 	header: {
 		marginTop: 8,
