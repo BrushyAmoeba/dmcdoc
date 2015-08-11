@@ -10,10 +10,14 @@ class SectionContent extends React.Component {
         }
         // Bind callback methods to make `this` the correct context.
         this.handle_click = this.handle_click.bind(this)
+        this.show = this.show.bind(this)
     }
     handle_click() {
         //toggle state
         this.setState({ showContent: !this.state.showContent })
+    }
+    show(){
+        this.setState({ showContent: true })
     }
     getContent(){
         if (this.state.showContent){
@@ -63,7 +67,7 @@ class SectionContent extends React.Component {
 let styles = StyleSheet.create({
     headerWell: {
         padding: 15,
-        backgroundColor: '#77C5F7',
+        backgroundColor: 'rgba(0, 160, 62, .5)',
     },
     well: {
         border: 'none',
@@ -81,6 +85,7 @@ let styles = StyleSheet.create({
     extraPadding:{
         padding: 20,
         paddingTop: 6,
+        paddingBottom: 6, 
     },
     content: {
         paddingLeft: 10,

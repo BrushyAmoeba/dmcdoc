@@ -6,13 +6,21 @@ import SectionContent from 'components/sectionContent'
 import SubsectionContent from 'components/subsectionContent'
 
 class RootComponent extends React.Component {
+	constructor(props) {
+        super(props)
+        // Bind callback methods to make `this` the correct context.
+        this.showContent = this.showContent.bind(this)
+    }
     // render the component
+    showContent(contentRef) {
+    	this.refs[contentRef].show()
+    }
     render() {
         return (
         	<div className="container-fluid">
-	            <TableOfContents />
+			    <TableOfContents showContent={this.showContent}/>
 				<div className="col-md-9">
-					<SectionContent title="Introduction" id="intro" >
+					<SectionContent title="Introduction" id="intro" ref="introduction">
 	                    <SubsectionContent title="Signing Up">
 							<p>To sign up, navigate your browser to <a target="_blank" href="http://digitalmediacenter.com">Digital Media Center</a> and click Sign up.</p>
 					    	<p>Enter your full name, email, desired username, and desired password.</p>
@@ -47,7 +55,7 @@ class RootComponent extends React.Component {
 			                <p>This is also where you can generate an API key; this will be discussed in more detail later.</p>
 	                    </SubsectionContent>
 					</SectionContent>
-	                <SectionContent title="Galleries" id="galleries">
+	                <SectionContent title="Galleries" id="galleries" ref="galleries">
 	                    <SubsectionContent title="Creating a Gallery">
 	                        <p>To create a gallery, navigate to the "Galleries" page.</p>  
 	                        <p style={styles.paragraph}>Click "Add Gallery" in the top right-hand corner of the main content area. You will be prompted for:</p>
@@ -77,7 +85,7 @@ class RootComponent extends React.Component {
 	                    	<p>Now when we preview, the order of our galleries will reflect whatever sorting changes we have made.</p>
 	                    </SubsectionContent>                        
 	                </SectionContent>
-	                <SectionContent title="Folders" id="folders">
+	                <SectionContent title="Folders" id="folders" ref="folders">
 	                	<SubsectionContent title="Adding Folders to Galleries">
 	                		<p>{"Up until this point, we've experimented with creating, editing, sorting, and previewing galleries. Now, let's add content within a gallery."}</p>
 	                		<p>When looking at the list of galleries, each gallery will have its name as a hyperlink. Clicking on one of these hyperlinks will take you to the gallery and display its contents.</p>
@@ -101,7 +109,7 @@ class RootComponent extends React.Component {
 	                		<p>{"The order in which we've sorted our folders determines the order of these tabs. Furthermore, the folder at the top of the list will be the default tab loaded."}</p>
 	                	</SubsectionContent>
 	                </SectionContent>
-	                <SectionContent title="Assets" id="assets" >
+	                <SectionContent title="Assets" id="assets" ref="assets" >
 						<SubsectionContent title="Adding Assets to Folders">
 							<p>Assets can be uploaded from virtually anywhere within Digital Media Center, provided you are logged in.</p>
 							<p style={styles.paragraph}>To upload an asset, click "Upload media" at the top of the dashboard. The settings for uploading assets are:</p>
@@ -129,7 +137,7 @@ class RootComponent extends React.Component {
 							</ul>
 						</SubsectionContent>
 	                </SectionContent>
-	                <SectionContent title="Analytics" id="analytics">
+	                <SectionContent title="Analytics" id="analytics" ref="analytics">
 	                	<SubsectionContent title="Viewing Analytics">
 	                		<p style={styles.paragraph}>To view Analytics for your assets, click Analytics, located in the left sidebar. The Analytics module consists of:</p>
 	                		<ul>
@@ -139,7 +147,7 @@ class RootComponent extends React.Component {
 	                		</ul>
 	                	</SubsectionContent>
 	                </SectionContent>
-	                <SectionContent title="Customize" id="customize">
+	                <SectionContent title="Customize" id="customize" ref="customize">
 	                	<p style={styles.paragraph}>The customize module, located in the left sidebar, allows you to customize what people will see when they visit your Digital Media Center. The module consists of three tabs:</p>
 	                	<ul>
 	                		<li>Page Settings</li>
@@ -191,7 +199,7 @@ class RootComponent extends React.Component {
 	                		</ul>
                 		</SubsectionContent>
 	                </SectionContent>
-	                <SectionContent title="Members" id="members">
+	                <SectionContent title="Members" id="members" ref="members">
 	                	<SubsectionContent title="Adding Members">
 	                		<p>The Members module allows you to create accounts for your team and subsequently set permission for these accounts.</p>
 	                		<p>{"Click Add Member at the top left of the main content area. Enter the information for the team member in the resulting page."}</p>
@@ -201,7 +209,7 @@ class RootComponent extends React.Component {
 	                	</SubsectionContent>
 	                	<SubsectionContent title="Managing Roles"></SubsectionContent>
 	                </SectionContent>
-	            	<SectionContent title="Gallery Settings" id="gallerysettings">
+	            	<SectionContent title="Gallery Settings" id="gallerysettings" ref="gallerysettings">
 	            		<p style={styles.paragraph}>Gallery Settings allow you to:</p>
 	            		<ul>
 	            			<li>Rename your gallery</li>
