@@ -28,7 +28,6 @@ class SubsectionContent extends React.Component {
         	<div>
 	        	<h3 onClick={this.handle_click} style={styles.header}>{this.props.title}</h3>
 	        	{ this.state.showContent ? this.getContent() : null }
-		    	
 	        </div>
         )
     }

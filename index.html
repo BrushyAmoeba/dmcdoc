@@ -1,6 +1,12 @@
 <html>
 	<head>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/animation.css" rel="stylesheet">
+		<link href="css/fontello.css" rel="stylesheet">
+		<link href="css/fontello-ie7.css" rel="stylesheet">
+		<link href="css/fontello-ie7-codes.css" rel="stylesheet">
+		<link href="css/fontello-codes.css" rel="stylesheet">
+		<link href="css/fontello-embedded.css" rel="stylesheet">
 	</head>
     <style>
 		body {
@@ -14,6 +20,22 @@
 			background-attachment: fixed;
 			animation: bgchange 11s ease;
 		}
+        .slideup, .slidedown {
+            max-height: 0;            
+            overflow-y: hidden;
+        	padding: 20px;
+        	padding-top: 0px;
+        	padding-bottom: 0px;
+            -webkit-transition: max-height 0.4s ease, padding 1s ease;
+            -moz-transition: max-height 0.4s ease, padding 1s ease;
+            -o-transition: max-height 0.4s ease, padding 1s ease;
+            transition: max-height 0.4s ease, padding 1s ease;
+        }
+        .slidedown {            
+            max-height: 1000px ;                    
+        }    
+        .slideup{
+        }
 	</style>
     <body>
         <script src="build/root.js"> </script>
