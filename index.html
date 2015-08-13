@@ -11,6 +11,7 @@
 	</head>
     <style>
 		body {
+			cursor: pointer;
 	  		padding-top:20px;
 	  		padding-bottom:20px;
 	  		background: url('images/bg2.png');
@@ -23,19 +24,21 @@
 		a {
 			color: #0087cb;
 		}
+		@media (min-width: 992px){
+			.col-md-2{
+				width: 15%;
+			}
+		}
         .slideup, .slidedown {
             max-height: 0;            
             overflow-y: hidden;
-        	padding: 20px;
-        	padding-top: 0px;
-        	padding-bottom: 0px;
-            -webkit-transition: max-height 0.4s ease, padding 1s ease;
-            -moz-transition: max-height 0.4s ease, padding 1s ease;
-            -o-transition: max-height 0.4s ease, padding 1s ease;
-            transition: max-height 0.4s ease, padding 1s ease;
+            -webkit-transition: max-height 0.55s ease, padding .55s ease;
+            -moz-transition: max-height 0.55s ease, padding .55s ease;
+            -o-transition: max-height 0.55s ease, padding .55s ease;
+            transition: max-height 0.55s ease, padding .55s ease;
         }
         .slidedown {            
-            max-height: 1000px ;                    
+            max-height: 9001px ;                    
         }
 	</style>
     <body>

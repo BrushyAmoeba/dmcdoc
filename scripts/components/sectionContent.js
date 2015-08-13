@@ -29,7 +29,7 @@ class SectionContent extends React.Component {
         }
         else {
             return (       
-                <div className="slideup">
+                <div style={styles.noPadding} className="slideup">
                     {this.props.children}
                 </div> 
             )
@@ -67,7 +67,7 @@ class SectionContent extends React.Component {
 let styles = StyleSheet.create({
     headerWell: {
         padding: 15,
-        backgroundColor: 'rgba(0, 160, 62, .5)',
+        backgroundColor: 'rgba(51, 162, 3, .55)',
     },
     well: {
         border: 'none',
@@ -83,9 +83,14 @@ let styles = StyleSheet.create({
         padding: 7,
     },
     extraPadding:{
-        padding: 20,
+        padding: 14,
         paddingTop: 6,
         paddingBottom: 6, 
+    },
+    noPadding:{
+        padding: 14,
+        paddingTop: 0,
+        paddingBottom: 0, 
     },
     content: {
         paddingLeft: 10,
