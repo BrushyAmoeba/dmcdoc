@@ -32,22 +32,10 @@ class SubsectionContent extends React.Component {
             )
         }
     }
-    getAccordion(){
-        if (this.state.showContent == false){
-            return(
-                <i className="icon-plus" style={styles.icon}></i>
-            )
-        }
-        else{
-            return(
-                <i className="icon-minus" style={styles.icon}></i>
-            )    
-        }
-    }   
     render() {
         return (
-        	<div>
-	        	<h3 onClick={this.handle_click} style={styles.header}>{this.getAccordion()}{this.props.title}</h3>
+        	<div id={this.props.id}>
+	        	<h3 style={styles.header}>{this.props.title}</h3>
                 {this.getContent()}
 	        	{/* this.state.showContent ? this.getContent() : null */}
 	        </div>
@@ -58,17 +46,12 @@ class SubsectionContent extends React.Component {
 let styles = StyleSheet.create({
     content: {
         paddingTop: 3,
-        marginLeft: 35,
+        marginLeft: 15,
     },
     header: {
     	marginTop: 5,
         marginBottom: 10,
-    },
-    icon: {
-        fontSize: 18,
-        marginLeft: 0,
-        paddingRight: 8,
-        verticalAlign: '9%',
+        marginLeft: 15,
     },
 })
 

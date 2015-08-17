@@ -14,7 +14,7 @@ class AnalyticsContent extends React.Component {
     render() {
         return (
             <div>
-                <SubsectionContent title="Viewing Analytics">
+                <SubsectionContent title="Viewing Analytics" id="analytics">
                     <p style={styles.paragraph}>To view Analytics for your assets, click Analytics, located in the left sidebar. The Analytics module consists of:</p>
                     <ul>
                         <li>Events</li>

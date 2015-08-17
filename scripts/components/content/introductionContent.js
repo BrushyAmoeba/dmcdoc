@@ -14,13 +14,13 @@ class IntroductionContent extends React.Component {
     render() {
         return (
             <div>
-                <SubsectionContent title="Signing Up">
+                <SubsectionContent title="Signing Up" id="signingup">
                     <p>To sign up, navigate your browser to <a target="_blank" href="http://digitalmediacenter.com">Digital Media Center</a> and click Sign up.</p>
                     <p>Enter your full name, email, desired username, and desired password.</p>
                     <p>After signing up, you will receive an email with confirmation instructions. You must confirm your account before you can sign in.</p>
                     <p>{"If you're having trouble finding the confirmation email, check your spam folder. The subject of the email is 'Confirmation instructions.'"}</p>
                 </SubsectionContent>
-                <SubsectionContent title="The Interface">
+                <SubsectionContent title="The Interface" id="interface">
                     <p style={styles.paragraph}>Once signed in, you will be presented with the DMC dashboard, which consists of:</p>
                     <ul>
                         <li>main content area</li>
@@ -43,7 +43,7 @@ class IntroductionContent extends React.Component {
                         <li>Logout</li>
                     </ul>
                 </SubsectionContent>
-                <SubsectionContent title="Editing Profile Information">
+                <SubsectionContent title="Editing Profile Information" id="profile">
                     <p>If you ever wish to change your email or password, simply click My Profile at the top of the dashboard, edit your information, and click save changes.</p>
                     <p>This is also where you can generate an API key; this will be discussed in more detail later.</p>
                 </SubsectionContent>
@@ -53,7 +53,9 @@ class IntroductionContent extends React.Component {
 }
 
 let styles = StyleSheet.create({
-
+    paragraph: {
+        marginBottom: 0,
+    }
 })
 
 export default IntroductionContent

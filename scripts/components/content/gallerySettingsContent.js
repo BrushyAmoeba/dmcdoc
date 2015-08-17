@@ -14,16 +14,29 @@ class GallerySettingsContent extends React.Component {
     render() {
         return (
             <div>
-                <p style={styles.paragraph}>Gallery Settings allow you to:</p>
-                <ul>
-                    <li>Rename your gallery</li>
-                    <li>Create external links that show up in the top menu bar when viewing a gallery</li>
-                    <li>Feature a gallery (includes a large image next to the gallery title in the portal page)</li>
-                    <li>Set featured image</li>
-                    <li>Add a custom message to be displayed below the gallery title (in smaller text) when viewing a specific gallery</li>
-                </ul>
-                <p>{"Gallery Settings can only be accessed by navigating to a gallery (for example, by clicking Galleries in the left sidebar and then clicking on a specific Gallery title). Once you've navigated to a gallery, the 'Gallery Settings' is now visible in the left sidebar."} </p>
-        	</div>
+                <SubsectionContent title="Editing Settings">
+                    <p style={styles.paragraph}>Gallery Settings allow you to:</p>
+                    <ul>
+                        <li>Rename your gallery</li>
+                        <li>Create external links that show up in the top menu bar when viewing a gallery</li>
+                        <li>Feature a gallery (includes a large image next to the gallery title in the portal page)</li>
+                        <li>Set featured image</li>
+                        <li>Add a custom message to be displayed below the gallery title (in smaller text) when viewing a specific gallery</li>
+                    </ul>
+                    <p>{"Gallery Settings can only be accessed by navigating to a gallery (for example, by clicking Galleries in the left sidebar and then clicking on a specific Gallery title). Once you've navigated to a gallery, the 'Gallery Settings' is now visible in the left sidebar."} </p>
+        	   </SubsectionContent>
+                <SubsectionContent title="Editing Settings">
+                    <p style={styles.paragraph}>Gallery Settings allow you to:</p>
+                    <ul>
+                        <li>Rename your gallery</li>
+                        <li>Create external links that show up in the top menu bar when viewing a gallery</li>
+                        <li>Feature a gallery (includes a large image next to the gallery title in the portal page)</li>
+                        <li>Set featured image</li>
+                        <li>Add a custom message to be displayed below the gallery title (in smaller text) when viewing a specific gallery</li>
+                    </ul>
+                    <p>{"Gallery Settings can only be accessed by navigating to a gallery (for example, by clicking Galleries in the left sidebar and then clicking on a specific Gallery title). Once you've navigated to a gallery, the 'Gallery Settings' is now visible in the left sidebar."} </p>
+               </SubsectionContent>
+            </div>
         )
     }
 }

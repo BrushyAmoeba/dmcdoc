@@ -14,7 +14,7 @@ class GalleriesContent extends React.Component {
     render() {
         return (
             <div>
-                <SubsectionContent title="Creating a Gallery">
+                <SubsectionContent title="Creating a Gallery" id="creategal">
                     <p>To create a gallery, navigate to the "Galleries" page.</p>  
                     <p style={styles.paragraph}>Click "Add Gallery" in the top right-hand corner of the main content area. You will be prompted for:</p>
                     <ul>
@@ -30,13 +30,13 @@ class GalleriesContent extends React.Component {
                         <li>Delete</li>
                     </ul>  
                 </SubsectionContent>
-                <SubsectionContent title="Previewing a Gallery">
+                <SubsectionContent title="Previewing a Gallery" id="previewgal">
                     <p>Previewing a gallery shows us what visitors will see when they view our profile.</p>
                     <p>To preview, simply click Preview at the top of our dashboard.</p>
                     <p>Try editing a gallery and unchecking "Visible for users?" Now, our video is private.</p>
                     <p>To confirm this, click preview. The gallery we set to private should not be shown.</p>
                 </SubsectionContent>
-                <SubsectionContent title="Sorting Galleries">
+                <SubsectionContent title="Sorting Galleries" id="sortgal">
                     <p>{"Let's add a few more galleries so we can experiment with sorting."} Sorting determines the ordering of our galleries when people view our portal.</p>
                     <p>Before performing any sorting operations, our galleries will be sorted with the oldest at the top and the newest at the bottom.</p>
                     <p>To sort, click on the arrows to the left of a gallery item and drag the item to your desired position.</p>

@@ -8,12 +8,14 @@
 		<link href="css/fontello-codes.css" rel="stylesheet">
 		<link href="css/fontello-embedded.css" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	</head>
     <style>
 		body {
-			cursor: pointer;
-	  		padding-top:20px;
-	  		padding-bottom:20px;
+	  		padding-top:10px;
+	  		padding-bottom:10px;
 	  		background: url('images/bg2.png');
 	  		-webkit-background-size: cover;
 			-moz-background-size: cover;
@@ -29,17 +31,9 @@
 				width: 15%;
 			}
 		}
-        .slideup, .slidedown {
-            max-height: 0;            
-            overflow-y: hidden;
-            -webkit-transition: max-height 0.55s ease, padding .55s ease;
-            -moz-transition: max-height 0.55s ease, padding .55s ease;
-            -o-transition: max-height 0.55s ease, padding .55s ease;
-            transition: max-height 0.55s ease, padding .55s ease;
-        }
-        .slidedown {            
-            max-height: 9001px ;                    
-        }
+		.ui-autocomplete {
+			position: fixed;
+		}
 	</style>
     <body>
         <script src="build/root.js"> </script>

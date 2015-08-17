@@ -44,7 +44,7 @@ class CustomizeContent extends React.Component {
                         <li>Welcome message (if a welcome message is set, your portal will have a section that displays this welcome message)</li>
                         <li>Restrictions message (if a restriction message is set, your portal will have a link in the bottom right that reads “Restrictions” and when clicked on, will display your restriction message)</li>
                         <li>Copyrights (if set, this text will replace the “Digital Media Center” text in the bottom left of your portal)</li>
-                        <li>Announcements (if you’ve added any announcements, your portal will contain an announcement section. Visitors can see the date and time these were created)</li>
+                        <li>{"Announcements (if you've added any announcements, your portal will contain an announcement section. Visitors can see the date and time these were created)"}</li>
                     </ul>
                 </SubsectionContent>
                 <SubsectionContent title="Theme">

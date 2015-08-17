@@ -16,25 +16,18 @@ class RootComponent extends React.Component {
     render() {
         return (
         	<div>
-	        	<div className="container-fluid">
+	        	<div className="container-fluid" style={styles.container}>
 	        		{this.props.content}
 	            </div>
-	            <div style={styles.footer}>
-		        	FOOTER
-		        </div>
 	        </div>
         )
     }
 }
 
 let styles = StyleSheet.create({
-	footer: {
-
-        backgroundColor: 'rgba(245, 245, 245, 0.85)',
-		padding: 50,
-		marginTop: 25,
-		marginLeft: 255,
-		marginRight: 185,
+	container: {
+		paddingLeft: 10,
+		paddingRight: 10,
 	}
 })
 

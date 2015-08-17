@@ -6,58 +6,24 @@ class SectionContent extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-          showContent: true,
+
         }
-        // Bind callback methods to make `this` the correct context.
-        this.handle_click = this.handle_click.bind(this)
-        this.show = this.show.bind(this)
-    }
-    handle_click() {
-        //toggle state
-        this.setState({ showContent: !this.state.showContent })
-    }
-    show(){
-        this.setState({ showContent: true })
     }
     getContent(){
-        if (this.state.showContent){
-            return (       
-                <div style={styles.extraPadding} className="slidedown">
-                    {this.props.children}
-                </div> 
-            )
-        }
-        else {
-            return (       
-                <div style={styles.noPadding} className="slideup">
-                    {this.props.children}
-                </div> 
-            )
-        }
-    }
-    getAccordion(){
-        if (this.state.showContent == false){
-            return(
-                <i className="icon-plus" style={styles.icon}></i>
-            )
-        }
-        else{
-            return(
-                <i className="icon-minus" style={styles.icon}></i>
-            )    
-        }
+        return (       
+            <div style={styles.extraPadding}>
+                {this.props.children}
+            </div> 
+        )
     }    	
     render() {
         return (
         	<div id={this.props.id} style={styles.section}>
                 <div className="well" style={styles.well}>
                     <div style={styles.headerWell} >
-                        <h1 style={styles.bigHeader} onClick={this.handle_click}>{this.getAccordion()}{this.props.title}</h1>
+                        <h1 style={styles.bigHeader}>{this.props.title}</h1>
                     </div>
                     {this.getContent()}
-                    {/*<div style={styles.content} className="slidedown">
-                        { this.state.showContent ? this.getContent() : null }
-                    </div>*/}
                 </div>
             </div>
         )
@@ -78,9 +44,11 @@ let styles = StyleSheet.create({
     bigHeader: {
         marginTop: 0,
         marginBottom: 0,
+        marginLeft: 15,
     },
     section: {
-        padding: 7,
+        paddingTop: 7,
+        paddingBottom: 20,
     },
     extraPadding:{
         padding: 14,
@@ -95,11 +63,6 @@ let styles = StyleSheet.create({
     content: {
         paddingLeft: 10,
         paddingRight: 10,
-    },
-    icon: {
-        fontSize: 24,
-        paddingRight: 8,
-        verticalAlign: '15%',
     },
 })
 
