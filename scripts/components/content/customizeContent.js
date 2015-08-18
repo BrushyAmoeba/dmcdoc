@@ -22,7 +22,7 @@ class CustomizeContent extends React.Component {
                         <li>Theme</li>
                     </ul>
                 </SubsectionContent>
-                <SubsectionContent title="Page Settings">
+                <SubsectionContent title="Page Settings" id="pagesettings">
                     <h4>Logo Options</h4>
                     <p>Logo Options allow you to customize the logo that appears in the top left of your Digital Media Center. By default, this logo is simply text representing the full name you gave in the registration process.</p>
                     <p>The Logo section allows you to upload an image representing your logo. The image will be scaled to 50px heigh, preserving aspect ratio in the process.</p>
@@ -38,7 +38,7 @@ class CustomizeContent extends React.Component {
                     <p>"Subdomain password" will designate the password, if password protection is turned on.</p>
                     <p>{"When you've finished making changes, click Apply Changes."}</p>
                 </SubsectionContent>
-                <SubsectionContent title="Portal">
+                <SubsectionContent title="Portal" id="portal">
                     <p style={styles.paragraph}>The Portal module allows you to create a welcome page for visitors to your page. This page includes:</p>
                     <ul>
                         <li>Portal Title (large header text)</li>
@@ -49,7 +49,7 @@ class CustomizeContent extends React.Component {
                         <li>{"Announcements (if you've added any announcements, your portal will contain an announcement section. Visitors can see the date and time these were created)"}</li>
                     </ul>
                 </SubsectionContent>
-                <SubsectionContent title="Theme">
+                <SubsectionContent title="Theme" id="theme">
                     <p style={styles.paragraph}>The Theme tab allows you to change the colors of various elements of your portal. These include:</p>
                     <ul>
                         <li>Navigation bar background color</li>

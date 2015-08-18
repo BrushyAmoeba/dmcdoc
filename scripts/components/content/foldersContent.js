@@ -14,7 +14,7 @@ class FoldersContent extends React.Component {
     render() {
         return (
             <div>
-                <SubsectionContent title="Adding Folders to Galleries">
+                <SubsectionContent title="Adding Folders to Galleries" id="addfolders">
                     <p>{"Up until this point, we've experimented with creating, editing, sorting, and previewing galleries. Now, let's add content within a gallery."}</p>
                     <p>When looking at the list of galleries, each gallery will have its name as a hyperlink. Clicking on one of these hyperlinks will take you to the gallery and display its contents.</p>
                     <p>Assets must belong to a folder. If we add an asset before creating any folders, a folder named "default" will be created automatically, and our new asset will be added to this folder.</p>
@@ -31,7 +31,7 @@ class FoldersContent extends React.Component {
                         <li>Add password protection</li>
                     </ul>
                 </SubsectionContent>
-                <SubsectionContent title="Sorting Folders">
+                <SubsectionContent title="Sorting Folders" id="sortfolders">
                     <p>If we have multiple folders, we can also sort the folders in the same way we sorted galleries.</p>
                     <p>{"Close the Manage Folders window by clicking the 'x' at the top-right. Observe that each folder we've created now has a tab associated with it."}</p>
                     <p>{"The order in which we've sorted our folders determines the order of these tabs. Furthermore, the folder at the top of the list will be the default tab loaded."}</p>

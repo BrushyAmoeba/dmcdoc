@@ -14,7 +14,7 @@ class AssetsContent extends React.Component {
     render() {
         return (
             <div>
-                <SubsectionContent title="Adding Assets to Folders">
+                <SubsectionContent title="Adding Assets to Folders" id="addassets">
                     <p>Assets can be uploaded from virtually anywhere within Digital Media Center, provided you are logged in.</p>
                     <p style={styles.paragraph}>To upload an asset, click "Upload media" at the top of the dashboard. The settings for uploading assets are:</p>
                     <ul>
@@ -25,12 +25,12 @@ class AssetsContent extends React.Component {
                         <li>Tags</li>
                     </ul>
                 </SubsectionContent>
-                <SubsectionContent title="Uploading Multiple Assets at Once">
+                <SubsectionContent title="Uploading Multiple Assets at Once" id="batchupload">
                     <p>Below these settings you will find options to cancel upload and add additional files to the upload.</p>
                     <p>You have the option to add multiple files at once, creating a "batch upload."</p>
                     <p>All files uploaded in batch will be given the same settings as dictated above. They will all have the same title and description.</p>
                 </SubsectionContent>
-                <SubsectionContent title="Asset Options">
+                <SubsectionContent title="Asset Options" id="assetoptions">
                     <p style={styles.paragraph}>Every asset in a given folder will have a small cog wheel icon in the bottom right. Clicking this will bring up several options for an asset. These options include:</p>
                     <ul>
                         <li>Download</li>
