@@ -173,14 +173,18 @@ class Content extends React.Component {
     showNextSection() {
         let chapter=this.getNextSection()
         if (chapter!=null){
-            React.findDOMNode(this.refs[chapter]).scrollIntoView()
+            $('html, body').animate({
+                scrollTop: $(React.findDOMNode(this.refs[chapter])).offset().top
+            }, 500);
             this.setState({currentChapter: chapter})           
         }
     }
     showPrevSection() {
         let chapter=this.getPrevSection()
         if (chapter!=null){
-            React.findDOMNode(this.refs[chapter]).scrollIntoView()
+            $('html, body').animate({
+                scrollTop: $(React.findDOMNode(this.refs[chapter])).offset().top
+            }, 500);
             this.setState({currentChapter: chapter})           
         }
     }
@@ -234,7 +238,7 @@ let styles = StyleSheet.create({
         marginBottom: 15,
     },
     container: {
-        width: '10%',
+        
     },
     niceGreen: {
         backgroundColor: 'rgba(51, 162, 3, .55)',

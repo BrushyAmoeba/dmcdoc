@@ -49,11 +49,11 @@ class TableOfContents extends React.Component {
     render() {
         return (
 	        <div className="col-md-2" style={styles.container} >
-			  	<div style={styles.searchandicon}>
-			  		<i className="icon-search" style={styles.icon}></i>
-					<input id="tags" placeholder="Search" style={styles.search} /> 
+			  	<div className="searchandicon">
+			  		<i className="icon-search icon"></i>
+					<input className="search" id="tags" placeholder="Search" /> 
 				</div>
-	        	<div className="well" style={styles.toc}>
+	        	<div className="well toc" style={styles.toc}>
 	        		{this.props.children}
 			  	</div>
 		    </div>
@@ -68,28 +68,10 @@ let styles = StyleSheet.create({
 		backgroundColor: 'rgba(245, 245, 245, 0.5)',
 		border: 'none',
 		position: 'fixed',
-		width: '13.5%',
 		top: 70,
 	},
 	container: {
 		paddingTop: 7,
-	},
-	search: {
-		position: 'fixed',
-		left: 70,
-		height: 30,
-		paddingLeft: 5,
-		width: '10%',
-	},
-	icon: {
-		fontSize: 30,
-		color: 'rgba(130, 192, 115, 1)',
-		position: 'fixed',
-		top: 25,
-	},
-	searchandicon:{
-		position: 'fixed',
-		top: 25,
 	},
 })
 
