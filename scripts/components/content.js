@@ -108,23 +108,36 @@ class Content extends React.Component {
     }
     getRelevantSection(breakpoints) {
         let currPosition = window.pageYOffset
+        let documentHeight = document.body.offsetHeight;
+        let windowHeight = document.body.clientHeight;
         let currentChapter = _.filter(breakpoints, (breakpoint)=>{
             return (currPosition>=breakpoint.lowerBound && currPosition<=breakpoint.upperBound)
         })
         if(currentChapter.length){
-            this.setState({ currentChapter: currentChapter[0].chapterName})
+            if(currPosition+windowHeight<documentHeight-10){
+                this.setState({ currentChapter: currentChapter[0].chapterName})
+                if (currentChapter[0].chapterName=="gallerysettings"){
+                    this.setState({onLastSlide: true})
+                }
+                else{
+                    constructorle.log(currentChapter[0].chapterName)
+                    this.setState({onLastSlide: false})
+                }
+                if (currentChapter[0].chapterName=="introduction"){
+                    this.setState({onFirstSlide: true})
+                }
+                else{
+                    this.setState({onFirstSlide: false})
+                }
+            }
+            else{
+                this.setState({ currentChapter: "gallerysettings"})
+                this.setState({onLastSlide: true})
+            }
         }
-        if (currentChapter[0].chapterName=="gallerysettings"){
+        else{
+            this.setState({ currentChapter: "gallerysettings"})
             this.setState({onLastSlide: true})
-        }
-        else{
-            this.setState({onLastSlide: false})
-        }
-        if (currentChapter[0].chapterName=="introduction"){
-            this.setState({onFirstSlide: true})
-        }
-        else{
-            this.setState({onFirstSlide: false})
         }
     }
     calculateBreakpoints(elements) {
@@ -134,13 +147,10 @@ class Content extends React.Component {
         let breakpoints = _.map(elements, (section)=>{
             let height = React.findDOMNode(this.refs[section.ref]).clientHeight
             let lowerBound = sum
-            let upperBound = lowerBound+height
+            let upperBound = lowerBound+height+26
 
             //edge cases
             if (firstRun){upperBound = upperBound*scaleFactor; firstRun=false}
-            if (section.ref=="analytics"){upperBound=lowerBound+height*2.2}
-            if (section.ref=="customize"){upperBound=lowerBound+height*.7}
-            if (section.ref=="members"){upperBound=lowerBound+height*1.2}
             sum = upperBound
             return {
                 lowerBound: lowerBound,
@@ -156,6 +166,10 @@ class Content extends React.Component {
         window.addEventListener("scroll", ()=>{
             this.getRelevantSection(breakpoints)
         });
+        //check for new breakpoints every 5 seconds in case window rescales
+        setInterval(()=>{
+            breakpoints = this.calculateBreakpoints(this.refs.contentContainer.props.children)
+        },5000);
     }
     isTimelineChapterDisplayed(chapterTitle) {
         return chapterTitle===this.state.currentChapter
@@ -218,7 +232,7 @@ class Content extends React.Component {
                 <div className="col-md-9" id="contentContainer" ref="contentContainer">
                     {sections}
                 </div>
-                <div className="col-md-1" style={styles.container}>
+                <div className="col-md-1">
                     {(!this.state.onFirstSlide) ? this.prevButton() : null}
                     {(!this.state.onLastSlide) ? this.nextButton() : null}
                 </div>
@@ -236,9 +250,6 @@ let styles = StyleSheet.create({
         backgroundColor: 'rgba(245, 245, 245, 0.85)',
         marginLeft: '.9%',
         marginBottom: 15,
-    },
-    container: {
-        
     },
     niceGreen: {
         backgroundColor: 'rgba(51, 162, 3, .55)',
