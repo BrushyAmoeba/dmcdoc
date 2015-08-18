@@ -5,9 +5,6 @@ import StyleSheet from 'react-style'
 class SectionContent extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-
-        }
     }
     getContent(){
         return (       

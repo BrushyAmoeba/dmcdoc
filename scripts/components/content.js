@@ -120,7 +120,6 @@ class Content extends React.Component {
                     this.setState({onLastSlide: true})
                 }
                 else{
-                    constructorle.log(currentChapter[0].chapterName)
                     this.setState({onLastSlide: false})
                 }
                 if (currentChapter[0].chapterName=="introduction"){
