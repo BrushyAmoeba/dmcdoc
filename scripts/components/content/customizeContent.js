@@ -14,12 +14,14 @@ class CustomizeContent extends React.Component {
     render() {
         return (
             <div>
-                <p style={styles.paragraph}>The customize module, located in the left sidebar, allows you to customize what people will see when they visit your Digital Media Center. The module consists of three tabs:</p>
-                <ul>
-                    <li>Page Settings</li>
-                    <li>Portal</li>
-                    <li>Theme</li>
-                </ul>
+                <SubsectionContent title="">
+                    <p style={styles.paragraph}>The customize module, located in the left sidebar, allows you to customize what people will see when they visit your Digital Media Center. The module consists of three tabs:</p>
+                    <ul>
+                        <li>Page Settings</li>
+                        <li>Portal</li>
+                        <li>Theme</li>
+                    </ul>
+                </SubsectionContent>
                 <SubsectionContent title="Page Settings">
                     <h4>Logo Options</h4>
                     <p>Logo Options allow you to customize the logo that appears in the top left of your Digital Media Center. By default, this logo is simply text representing the full name you gave in the registration process.</p>

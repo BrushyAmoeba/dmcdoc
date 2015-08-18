@@ -5,36 +5,34 @@ import StyleSheet from 'react-style'
 class TableOfContents extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-        	showSearch: false,
-        }
         // Bind callback methods to make `this` the correct context.
     }
     componentDidMount() {
 	    let availableTags = [
-	    	{value: "Signing Up", href: "#signingup" },
+	    	{value: "Sign up", href: "#signingup" },
 	    	{value: "Interface", href: "#interface" },
 	    	{value: "Profile", href: "#profile" },
+	    	{value: "Edit profile", href: "#profile" },
 	    	{value: "Galleries", href: "#galleries" },
-	    	{value: "Creating a Gallery", href: "#creategal" },
-	    	{value: "Previewing a Gallery", href: "#previewgal" },
-	    	{value: "Sorting Galleries", href: "#sortgal" },
+	    	{value: "Create gallery", href: "#creategal" },
+	    	{value: "Preview gallery", href: "#previewgal" },
+	    	{value: "Sort galleries", href: "#sortgal" },
 	    	{value: "Folders", href: "#folders" },
-	    	{value: "Adding Folders", href: "#addfolders" },
-	    	{value: "Sorting Folders", href: "#sortfolders" },
-	    	{value: "Adding Assets", href: "#addassets" },
-	    	{value: "Batch Upload", href: "#batchupload" },
-	    	{value: "Uploading Multiple Files at Once", href: "#batchupload" },
-	    	{value: "Asset Options", href: "#assetoptions" },
+	    	{value: "Add folders", href: "#addfolders" },
+	    	{value: "Sort folders", href: "#sortfolders" },
+	    	{value: "Add assets", href: "#addassets" },
+	    	{value: "Batch upload", href: "#batchupload" },
+	    	{value: "Upload multiple files at once", href: "#batchupload" },
+	    	{value: "Asset options", href: "#assetoptions" },
 	    	{value: "Analytics", href: "#analytics" },
-	    	{value: "Viewing Analytics", href: "#analytics" },
-	    	{value: "Page Settings", href: "#pagesettings" },
+	    	{value: "View analytics", href: "#analytics" },
+	    	{value: "Page settings", href: "#pagesettings" },
 	    	{value: "Portal", href: "#portal" },
 	    	{value: "Theme", href: "#theme" },
 	    	{value: "Members", href: "#members" },
-	    	{value: "Adding Members", href: "#addmembers" },
-	    	{value: "Managing Roles", href: "#manageroles" },
-	    	{value: "Gallery Settings", href: "#gallerysettings" },
+	    	{value: "Add members", href: "#addmembers" },
+	    	{value: "Manage roles", href: "#manageroles" },
+	    	{value: "Gallery settings", href: "#gallerysettings" },
 	    ]
 	    $( "#tags" ).autocomplete({
 	    	source: availableTags,
@@ -47,20 +45,17 @@ class TableOfContents extends React.Component {
 	      	},
 	    })
     }
-    showSearch() {
-    	this.setState({showSearch: !this.state.showSearch})
-    }
     // render the component
     render() {
         return (
 	        <div className="col-md-2" style={styles.container} >
+			  	<div style={styles.searchandicon}>
+			  		<i className="icon-search" style={styles.icon}></i>
+					<input id="tags" placeholder="Search" style={styles.search} /> 
+				</div>
 	        	<div className="well" style={styles.toc}>
 	        		{this.props.children}
 			  	</div>
-			  	<div>
-			  		<i className="icon-search" style={styles.icon} onClick={this.showSearch.bind(this)}></i>
-					{this.state.showSearch ? <input id="tags" placeholder="Search" style={styles.search} /> : <input id="tags" style={styles.hidden} /> }
-				</div>
 		    </div>
         )
     }
@@ -74,28 +69,28 @@ let styles = StyleSheet.create({
 		border: 'none',
 		position: 'fixed',
 		width: '13.5%',
+		top: 70,
 	},
 	container: {
 		paddingTop: 7,
 	},
 	search: {
 		position: 'fixed',
-		top: 340,
 		left: 70,
 		height: 30,
-		border: 'none',
 		paddingLeft: 5,
 		width: '10%',
 	},
-	hidden: {
-		display: 'none',
-	},
 	icon: {
 		fontSize: 30,
+		color: 'rgba(130, 192, 115, 1)',
 		position: 'fixed',
-		top: 340,
-		color: 'rgba(133, 195, 118, 1)',
-	}
+		top: 25,
+	},
+	searchandicon:{
+		position: 'fixed',
+		top: 25,
+	},
 })
 
 export default TableOfContents
