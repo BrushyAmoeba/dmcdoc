@@ -21,6 +21,7 @@ class AnalyticsContent extends React.Component {
                         <li>Downloads</li>
                         <li>Graphs</li>
                     </ul>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut dui at ipsum rhoncus tempor ac ac magna. Proin viverra, nisl a malesuada efficitur, sem quam posuere purus, nec feugiat nunc lorem eu ante. Pellentesque hendrerit pellentesque auctor. Nam in laoreet quam. Sed tempor neque lectus, sed rhoncus eros rhoncus eu. Maecenas cursus porta congue. Phasellus euismod ante ligula. Vestibulum tincidunt ut lorem nec pulvinar. Etiam mattis tortor eu eros molestie tincidunt. Donec vitae nisi turpis. Donec vehicula nunc nec est elementum volutpat. Aenean tristique pellentesque porttitor. Integer vulputate rhoncus mauris, in scelerisque leo scelerisque ac. Proin euismod ac libero id vestibulum. Cras sit amet porttitor orci, ut feugiat mi. Duis fermentum felis vel hendrerit tempor.</p>
                 </SubsectionContent>
         	</div>
         )
